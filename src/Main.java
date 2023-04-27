@@ -8,21 +8,10 @@ public class Main {
         Cliente cliente = new Cliente("Samuel Machado Duarte", 22);
         Conta conta = new Conta(cliente, 2500, TipoConta.CORRENTE);
 
-        String texto;
-        texto = """
-                *****************************************
-                ###    Bem-Vindo a sua conta do CMD   ###
-                Cliente: %s
-                Idade: %d
-                Tipo de Conta: %s
-                
-                SALDO: %.2f
-                *****************************************
-                """.formatted(conta.getCliente().getNome(),
-                conta.getCliente().getIdade(),
-                conta.getTipoConta(),
-                conta.getSaldo());
-        System.out.println(texto);
+        //Exibe Dados da Conta
+        System.out.println(conta.mostraDados());
+
+        //Gera o menu
         String opcoes;
         opcoes = """
                 Operações
@@ -54,6 +43,10 @@ public class Main {
                 case 4:
                     System.out.println("PROGRAMA ENCERRADO!");
                     System.exit(0);
+                    break;
+                default:
+                    System.out.println("OPÇÃO INVALIDA, TENTE NOVAMENTE");
+                    break;
             }
 
 

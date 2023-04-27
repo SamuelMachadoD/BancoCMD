@@ -20,6 +20,23 @@ public class Conta {
         this.saldo -= valor;
         return "Retirada concluida!";
     }
+
+    public String mostraDados(){
+        String texto;
+        texto = """
+                *****************************************
+                Cliente: %s
+                Idade: %d
+                Tipo de Conta: %s
+                
+                SALDO: %.2f
+                *****************************************
+                """.formatted(cliente.getNome(),
+                cliente.getIdade(),
+                tipoConta,
+                saldo);
+        return texto;
+    }
     public double getSaldo() {
         return saldo;
     }
